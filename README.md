@@ -38,4 +38,4 @@ Redis используется как брокер сообщений и кэш.
 Запуск всей системы в изолированных контейнерах:
 
 ```bash
-docker-compose up --build
+docker compose up --build
