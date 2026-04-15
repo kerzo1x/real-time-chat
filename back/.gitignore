@@ -1,0 +1,23 @@
+# --- Dependencies ---
+node_modules/
+# bun.lockb
+
+# --- Build & Output ---
+dist/
+build/
+*.tsbuildinfo
+
+# --- Prisma ---
+/prisma/*.db
+/prisma/*.db-journal
+
+# --- Runtime ---
+logs/
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# --- Testing ---
+coverage/
+.nyc_output

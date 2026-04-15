@@ -1,50 +1,41 @@
-----just prototype
-🚀 Real-Time Modular Chat Engine
-A high-performance, modular backend and frontend ecosystem built for seamless real-time communication. This isn't just a chat; it's a showcase of scalable architecture, type-safety, and containerized deployment.
+# 🚀 High-Performance Modular Chat Engine (Cyborg Basis)
 
-🦾 Cyborg Basis: Core Tech Stack
-Backend: Node.js, TypeScript, Express.
 
-Database & ORM: PostgreSQL + Prisma (or Drizzle) for type-safe queries.
+Ультимативная чат-система, построенная на базе ElysiaJS и Bun. Проект демонстрирует экстремальную производительность, типобезопасность и эффективное управление ресурсами. Архитектура без лишнего "шума", только скорость и дисциплина данных.
 
-Real-Time: Socket.io for low-latency, bidirectional communication.
+---
 
-Frontend: Vue 3 (Composition API) + Tailwind CSS + Pinia.
+## Tech Stack
 
-DevOps: Docker & Docker Compose for one-click environment orchestration.
+Инструменты, выбранные для обеспечения максимальной пропускной способности:
 
-🏗 Architectural Highlights
-Modular Monolith: Logic is separated into domain modules (Auth, Chat, User) to ensure high maintainability and prevent "spaghetti code".
+* **Runtime:** Bun (The fast all-in-one JavaScript runtime)
+* **Backend Framework:** ElysiaJS (High-performance, End-to-end type safety)
+* **Real-Time:** Elysia WebSocket (Native Bun performance)
+* **State Management:** Redis (In-memory storage for sessions and real-time states)
+* **Database & ORM:** PostgreSQL + Prisma (Type-safe Schema Management)
+* **Frontend:** Vue 3 (Composition API) + Pinia + Tailwind CSS
+* **DevOps:** Docker (Containerized high-load environment)
 
-Event-Driven Communication: Utilizing WebSockets to handle real-time events like message:send and user:typing without overloading the REST API.
+---
 
-Layered Architecture: Clear separation between Controllers (Transport), Services (Business Logic), and Repositories (Data Access).
+## 🏗 Architectural Highlights
 
-Strict Type-Safety: End-to-end TypeScript integration to catch bugs at compile time.
+### 1. Unified Type-System (E2E)
+Благодаря Elysia и TypeScript, типы API доступны на фронтенде без генерации лишнего кода. Это исключает дефекты при передаче данных между бэкендом и Vue-клиентом.
 
-🐳 Getting Started (Docker Way)
-You don't need to install Postgres or Node locally. Just run:
+### 2. Native WebSocket Performance
+Вместо Socket.io используется нативная реализация WebSockets в Bun через Elysia. Это снижает накладные расходы на память и уменьшает задержку (latency) при передаче сообщений.
 
-Bash
+### 3. Redis-Powered Sync
+Redis используется как брокер сообщений и кэш. Это гарантирует, что статусы пользователей и история последних сообщений отдаются мгновенно, не нагружая основную базу данных PostgreSQL.
+
+//Used Path alias
+---
+
+## 🐳 Deployment (Infrastructure as Code)
+
+Запуск всей системы в изолированных контейнерах:
+
+```bash
 docker-compose up --build
-The system will automatically:
-
-Spin up a PostgreSQL container.
-
-Run Prisma migrations to sync your schema.
-
-Start the Express server and Vue frontend.
-
-🥊 Key Features Implemented
-[x] JWT Authentication: Secure user sessions.
-
-[x] Real-time Messaging: Instant delivery via WebSockets.
-
-[x] Relational Data: Complex SQL relations handled via Prisma.
-
-[x] Containerization: Production-ready Docker configuration.
-
-[x] Input Validation: Strict schema validation using Zod.
-
-🛡 Why this project?
-This project demonstrates my ability to bridge the gap between low-level logic (efficiency, memory, SQL) and modern high-level interfaces. With a background in C language, I focus on writing code that is not only functional but also resource-efficient and architecturally sound.

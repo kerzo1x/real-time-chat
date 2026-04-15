@@ -1,0 +1,9 @@
+model Session {
+  id        String   @id @default(cuid())
+  token     String   @unique @db.VarChar(30)
+  userId    String   @map("user_id")
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("sessions")
+}
